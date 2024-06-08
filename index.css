@@ -1,0 +1,224 @@
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+}
+header {
+    position: sticky;
+    top: 0px;
+}
+  
+.main_header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F5F5F5;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: #F5F5F5;
+    font-size: 17px;
+    font-size: larger;
+}
+nav ul li a:hover {
+    color: #ff7134;
+    text-decoration: underline;
+}
+
+#home-section {
+    height: 90vh;
+    background-image: url('assets/Untitled.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    
+}
+
+#home-section div {
+    max-width: 800px;
+    padding: 20px;
+    background: transparent;
+}
+#home-section div h1 {
+    font-size: 50px;
+    color: #ff7134;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+
+}
+#home-section div p {
+    font-size: 25px;
+
+}
+p {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+
+
+
+.button {
+    display: inline;
+    padding: 12px 24px;
+    background-color: #ff7134;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #555;
+}
+section h1 {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 40px;
+    color: #ff7134;
+}
+#about-section {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    padding: 0px 50px;
+  }
+  
+#about-section .info{
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+  }
+
+  
+  #about-section p {
+    font-size: 20px;
+    margin-left: 40px;
+  }
+
+  table {
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+  
+  th, td {
+    padding: 8px; 
+  }
+  
+  th {
+    color: #ff7134;
+    text-align: left;
+    font-size: 20px;
+}
+#projects-section {
+    height: 70vh;
+    padding-top: 40px;
+}
+#projects-section div{
+    display: flex;
+    justify-content: center;
+
+}
+.cards {
+  display: flex;
+  justify-content: center;
+
+}
+.card {
+    width: 230px;
+    height: 290px;
+    background-color: #e0dede;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+}
+.card:hover {
+    background-color: #b8b8b8;
+}
+.project-img {
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+}
+.project-info {
+    text-align: center;
+}
+.project-info h3 {
+    margin: 0;
+  }
+  
+  .project-info p {
+    margin-top: 0;
+  }
+
+.hq {
+    height: 40vh;
+}
+.hobbies {
+    display: flex;
+    justify-content: center;
+
+}
+.great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+  }
+  .quote {
+    background-color: wheat;
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+.hobbies ul li {
+    font-size: larger;
+    font-family: sans-serif;
+}
+.hobbies ul li a{
+    color: #ff7134;
+    text-decoration: none;
+}
+#contact-section{
+    height: 40vh;
+    background-color: #292828;
+    color: white;
+
+}
+#contact-section h3 {
+    padding-top: 10px;
+    margin-left: 400px;
+}
+#contact-section h3 span {
+    color: #ff7134;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}

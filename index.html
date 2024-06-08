@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main_header">
+            <div class="name">Sazzad Hossain Shad<span style="color: #ff7134;">.</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home-section">Home</a></li>
+                    <li><a href="#about-section">About Me</a></li>
+                    <li><a href="#projects-section">Projects</a></li>
+                    <li><a href="#contact-section">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home-section">
+        <div>
+            <h1>Websites done right.</h1>
+            <p>Hi, I am <span style="color: #ff7134;">Shad</span>, a web developer from Dhaka, Bangladesh. I enjoy building web applications 
+            from small businesses to interactive websites. If you have any queries please click the button below for contact information.</p>
+            <a href="#contact-section" class="button">Get started</a>
+        </div>
+
+
+    </section>
+
+    <section id="about-section">
+        <div class="info">
+          <div>
+            <img src="assets/profile.jpg" alt="A photo of mine" style="width: 200px; height: 200px; border-radius: 50%;">
+          </div>
+          <div>
+            <h1 style="margin-left: 40px;">About Me</h1>
+            <p>I am currently studying Computer Science at <a style="color: #ff7134; text-decoration: none;" href="https://www.bracu.ac.bd/">Brac University</a>. As a programmer, I love learning new stuff and I pick things up pretty fast. I'm all about staying on top of what's happening in the world of programming. I enjoy tackling tricky problems and I'm always ready to take on new tasks.</p>
+            <table style="font-size: 16px;">
+                <tr>
+                    <th colspan="3">Other information</th>
+                </tr>
+                <tr>
+                    <td>Proficient in</td>
+                    <td>:</td>
+                    <td>Python, HTML, CSS, PHP, MySQL, Flutter</td>
+                </tr>
+                <tr>
+                    <td>IDE's</td>
+                    <td>:</td>
+                    <td>Android Studio, VS code, Pycharm</td>
+                </tr>
+                <tr>
+                    <td>Education</td>
+                    <td>:</td>
+                    <td>SSC(2018), HSC(2020), Bsc in Computer Science(2021-present)</td>
+                </tr>
+            </table>
+
+          </div>
+        </div>
+    </section>
+    <section class="hq">
+        <div class="hobbies">
+            <h1 style="font-size: 22px;">Hobbies</h1>
+            <ul>
+                <li>Gaming. Two of my favorite games- <a href="https://www.youtube.com/watch?v=pKOtDgx9SWU">RDR 2</a>, <a href="https://www.youtube.com/watch?v=1-l29HlKkXU">Witcher 3</a></li>
+                <li>Programming</li>
+                <li>Touring</li>
+                <li>Programming</li>
+            </ul>
+        </div>
+        <div class="quote">
+            <h1>
+                "I came, I saw, I conquered."
+            </h1>
+            <h2 class="great-vibes-regular">-Julius Caesar</h2>
+
+        </div>
+    
+        
+
+    </section>
+    
+    <section id="projects-section">
+        <h1 style="text-align: center;">Projects</h1>
+        <div class="cards">
+            <a href="" class="card">
+                <img src="assets/Project-1.png" alt="Poster of a portfolio project" class="project-img">
+                <div class="project-info">
+                    <h3 style="margin: 0px;">Personal Portfolio</h3>
+                    <p style="margin-top: 0px;">A portfolio website of mine</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="contact-section">
+        <h2 style="color: #ff7134; margin-left: 400px; padding-top: 10px;">Contact Info:</h2>
+        <h3><span>Mobile</span> : +8801680552240</h3>
+        <h3><span>Email</span> : sazzad.hossain.shad@g.bracu.ac.bd</h3>
+        <h3><span>Address</span> : Dhanmondi, Dhaka</h3>
+    </section>
+
+    <footer>
+        <div id="footer-info"></div>
+    </footer>
+
+    <script>
+
+        var pageLocation = window.location.href;
+
+        var lastModified = document.lastModified;
+
+        var formattedDate = new Date(lastModified).toLocaleString();
+
+        var footerText = '© 2024 Sazzad Hossain Shad<br>Page Location: ' + pageLocation + '<br>Last Modified: ' + formattedDate;
+
+        document.getElementById('footer-info').innerHTML = footerText;
+    </script>
+
+    
+</body>
+</html>
