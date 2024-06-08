@@ -222,3 +222,7 @@ footer {
     background-color: black;
     color: white;
 }
+
+td {
+    font-size: larger;
+}
