@@ -33,9 +33,6 @@
             font-size: larger;
 
         }
-        .answers label {
-            color: rgb(137, 22, 22);
-        }
     </style>
 </head>
 <body>
@@ -48,16 +45,22 @@
 
     <script>
         const questions = [
-            { q: "What is the capital of Missouri?", a: ["St. Louis", "Jefferson City", "Kansas City"], c: 1 },
-            { q: "How many ounces in a pound?", a: ["10", "12", "16"], c: 2 },
-            { q: "Which planet is known as the Red Planet?", a: ["Venus", "Mars", "Jupiter"], c: 1 },
-            { q: "Who wrote 'Romeo and Juliet'?", a: ["Charles Dickens", "William Shakespeare", "Jane Austen"], c: 1 },
-            { q: "What is the largest ocean on Earth?", a: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean"], c: 2 },
-            { q: "What is the chemical symbol for gold?", a: ["Au", "Ag", "Fe"], c: 0 },
-            { q: "Which country is home to the kangaroo?", a: ["New Zealand", "South Africa", "Australia"], c: 2 },
-            { q: "What is the largest planet in our solar system?", a: ["Earth", "Saturn", "Jupiter"], c: 2 },
-            { q: "Who painted the Mona Lisa?", a: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso"], c: 1 },
-            { q: "What is the capital of Japan?", a: ["Seoul", "Beijing", "Tokyo"], c: 2 }
+            { q: "What is the time complexity of searching for an element in a sorted array using Binary Search?", a: ["O(1)", "O(log n)", "O(n)"], c: 1 },
+            { q: "What does HTML stand for?", a: ["Hyper Text Markup Language", "Highly Textual Markup Language", "Hyperlinks and Text Markup Language"], c: 0 },
+            { q: "Which sorting algorithm has the worst-case time complexity of O(n^2)?", a: ["Merge Sort", "Quick Sort", "Bubble Sort"], c: 2 },
+            { q: "What is a 'pointer' in C programming?", a: ["A type of variable", "An error in syntax", "A variable that stores the address of another variable"], c: 2 },
+            { q: "Which of the following is NOT a valid data type in JavaScript?", a: ["string", "boolean", "double"], c: 2 },
+            { q: "What does CSS stand for?", a: ["Cascading Style Sheets", "Creative Style Sheets", "Colorful Style Sheets"], c: 0 },
+            { q: "In object-oriented programming, what is encapsulation?", a: ["Hiding the complexity of the code", "Extending the behavior of an object", "Storing data in a structured way"], c: 0 },
+            { q: "What does MVC stand for in the context of software architecture?", a: ["Model-View-Controller", "Multiple View Controller", "Model-Visual Control"], c: 0 },
+            { q: "What is the process by which plants make their own food called?", a: ["Photosynthesis", "Respiration", "Transpiration"], c: 0 },
+            { q: "What is the atomic number of carbon?", a: ["5", "6", "7"], c: 1 },
+            { q: "What is the boiling point of water in degrees Celsius?", a: ["100", "0", "50"], c: 0 },
+            { q: "Which gas do plants absorb from the atmosphere to carry out photosynthesis?", a: ["Oxygen", "Carbon dioxide", "Nitrogen"], c: 1 },
+            { q: "What is the SI unit of force?", a: ["Watt", "Joule", "Newton"], c: 2 },
+            { q: "Which scientist is known for the theory of relativity?", a: ["Isaac Newton", "Albert Einstein", "Stephen Hawking"], c: 1 },
+            { q: "What is the speed of light in a vacuum approximately?", a: ["300,000 km/s", "150,000 km/s", "1,000,000 km/s"], c: 0 },
+            { q: "What is the formula for calculating kinetic energy?", a: ["E = mc^2", "E = 1/2 mv^2", "E = F * d"], c: 1 }
         ];
 
         const NUM_QUESTIONS = 5;
