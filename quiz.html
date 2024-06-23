@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Quiz</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .correct { color: green; }
+        .incorrect { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Random Quiz</h1>
+    <form id="quizForm"></form>
+    <div id="results"></div>
+
+    <script>
+        const questions = [
+            { q: "What is the capital of Missouri?", a: ["St. Louis", "Jefferson City", "Kansas City"], c: 1 },
+            { q: "How many ounces in a pound?", a: ["10", "12", "16"], c: 2 },
+            { q: "Which planet is known as the Red Planet?", a: ["Venus", "Mars", "Jupiter"], c: 1 },
+            { q: "Who wrote 'Romeo and Juliet'?", a: ["Charles Dickens", "William Shakespeare", "Jane Austen"], c: 1 },
+            { q: "What is the largest ocean on Earth?", a: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean"], c: 2 },
+            { q: "What is the chemical symbol for gold?", a: ["Au", "Ag", "Fe"], c: 0 },
+            { q: "Which country is home to the kangaroo?", a: ["New Zealand", "South Africa", "Australia"], c: 2 },
+            { q: "What is the largest planet in our solar system?", a: ["Earth", "Saturn", "Jupiter"], c: 2 },
+            { q: "Who painted the Mona Lisa?", a: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso"], c: 1 },
+            { q: "What is the capital of Japan?", a: ["Seoul", "Beijing", "Tokyo"], c: 2 }
+        ];
+
+        const NUM_QUESTIONS = 5;
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function loadQuiz() {
+            shuffleArray(questions);
+            const quizQuestions = questions.slice(0, NUM_QUESTIONS);
+            let quizHTML = '';
+
+            quizQuestions.forEach((q, index) => {
+                quizHTML += `
+                    <div class="question">
+                        <h3>Question ${index + 1}</h3>
+                        <p>${q.q}</p>
+                        ${q.a.map((answer, i) => `
+                            <label>
+                                <input type="radio" name="q${index}" value="${i}" required>
+                                ${['A', 'B', 'C'][i]}) ${answer}
+                            </label><br>
+                        `).join('')}
+                    </div>
+                `;
+            });
+
+            quizHTML += '<button class="btn_sub" type="submit">Submit Answers</button>';
+            document.getElementById('quizForm').innerHTML = quizHTML;
+            document.getElementById('quizForm').addEventListener('submit', checkAnswers);
+        }
+
+        function checkAnswers(e) {
+            e.preventDefault();
+            let score = 0;
+            let resultsHTML = '';
+
+            for (let i = 0; i < NUM_QUESTIONS; i++) {
+                const userAnswer = parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
+                const q = questions[i];
+                const correct = userAnswer === q.c;
+                if (correct) score++;
+
+                resultsHTML += `
+                    <p>
+                        <strong>Question ${i + 1}:</strong> ${q.q}<br>
+                        Your answer: ${['A', 'B', 'C'][userAnswer]}) ${q.a[userAnswer]}<br>
+                        <span class="${correct ? 'correct' : 'incorrect'}">
+                            ${correct ? 'CORRECT' : `INCORRECT. Correct answer: ${['A', 'B', 'C'][q.c]}) ${q.a[q.c]}`}
+                        </span>
+                    </p>
+                `;
+            }
+
+            const percentage = (score / NUM_QUESTIONS) * 100;
+            resultsHTML = `
+                <h2>Quiz Results</h2>
+                <p>You got ${score} out of ${NUM_QUESTIONS} correct (${percentage.toFixed(2)}%)</p>
+                ${resultsHTML}
+                <button onclick="location.reload()">Try Again</button>
+            `;
+
+            document.getElementById('quizForm').style.display = 'none';
+            document.getElementById('results').innerHTML = resultsHTML;
+        }
+
+        loadQuiz();
+    </script>
+</body>
+</html>

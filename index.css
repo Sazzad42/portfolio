@@ -226,3 +226,69 @@ footer {
 td {
     font-size: larger;
 }
+
+
+
+.fortune-box {
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+    text-align: center;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    margin: 40px;
+    background-color: #ff7134;
+    color: white;
+    height: fit-content;
+    width: 300px;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #333;
+
+}
+.btn_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    background-color: #ff7134;
+    color: white;
+    height: 50px;
+    width: 150px;
+    text-decoration: none;
+    font-size: large;
+    border-width: 0px
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ;
+}
+.btn_sub:hover {
+    background-color: #333;
+
+}

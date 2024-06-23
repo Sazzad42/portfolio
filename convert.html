@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #converter-form {
+            background-color: #ff5004;
+            border-radius: 12px;
+            padding: 10px;
+        }
+        
+        .currency-input {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        
+        }
+        .currency-input label {
+            width: 50px;
+            margin-right: 10px;
+            color: white;
+        }
+        .currency-input input {
+            flex-grow: 1;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.948);
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <form id="converter-form">
+        <div class="currency-input">
+            <label for="usd">USD:</label>
+            <input type="number" id="usd" name="usd" step="0.01" min="0">
+        </div>
+        <div class="currency-input">
+            <label for="eur">EUR:</label>
+            <input type="number" id="eur" name="eur" step="0.01" min="0">
+        </div>
+        <div class="currency-input">
+            <label for="gbp">GBP:</label>
+            <input type="number" id="gbp" name="gbp" step="0.01" min="0">
+        </div>
+        <div class="currency-input">
+            <label for="jpy">JPY:</label>
+            <input type="number" id="jpy" name="jpy" step="0.01" min="0">
+        </div>
+        <div class="currency-input">
+            <label for="aud">AUD:</label>
+            <input type="number" id="aud" name="aud" step="0.01" min="0">
+        </div>
+    </form>
+
+    <script>
+        // Exchange rates (as of a specific date, you may need to update these)
+        const exchangeRates = {
+            usd: 1,
+            eur: 0.91,
+            gbp: 0.79,
+            jpy: 149.51,
+            aud: 1.52
+        };
+
+        const form = document.getElementById('converter-form');
+        const inputs = form.querySelectorAll('input');
+
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                const sourceCurrency = this.name;
+                const sourceAmount = parseFloat(this.value);
+
+                if (!isNaN(sourceAmount)) {
+                    inputs.forEach(targetInput => {
+                        if (targetInput !== this) {
+                            const targetCurrency = targetInput.name;
+                            const convertedAmount = sourceAmount * (exchangeRates[targetCurrency] / exchangeRates[sourceCurrency]);
+                            targetInput.value = convertedAmount.toFixed(2);
+                        }
+                    });
+                } else {
+                    inputs.forEach(targetInput => {
+                        if (targetInput !== this) {
+                            targetInput.value = '';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

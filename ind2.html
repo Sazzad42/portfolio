@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <a href="quiz.html" class="btn"><h1>Start a Quiz!!</h1></a>
+    </div>
+
+
+    <div id="fortune" class="fortune-box"></div>
+
+    <footer>
+        <div id="footer-info"></div>
+    </footer>
+    
+
+
+
+
+
+
+
+
+    <script src="index.js"></script>
+    <script>
+
+        var pageLocation = window.location.href;
+
+        var lastModified = document.lastModified;
+
+        var formattedDate = new Date(lastModified).toLocaleString();
+
+        var footerText = '© 2024 Sazzad Hossain Shad<br>Page Location: ' + pageLocation + '<br>Last Modified: ' + formattedDate;
+
+        document.getElementById('footer-info').innerHTML = footerText;
+    </script>
+    
+</body>
+</html>
