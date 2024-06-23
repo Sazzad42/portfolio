@@ -36,6 +36,7 @@
     </style>
 </head>
 <body>
+    
     <div class="quiz">
         <h1>Random Quiz</h1>
         <form id="quizForm" class="quiz-form"></form>
@@ -62,8 +63,16 @@
             { q: "What is the speed of light in a vacuum approximately?", a: ["300,000 km/s", "150,000 km/s", "1,000,000 km/s"], c: 0 },
             { q: "What is the formula for calculating kinetic energy?", a: ["E = mc^2", "E = 1/2 mv^2", "E = F * d"], c: 1 }
         ];
+        let NUM_QUESTIONS;
 
-        const NUM_QUESTIONS = 5;
+            function getNumberOfQuestions() {
+                let userInput;
+                do {
+                    userInput = parseInt(prompt("How many questions would you like? (Enter a number between 5 and 10)"));
+                } while (isNaN(userInput) || userInput < 5 || userInput > 10);
+                return userInput;
+            }
+
 
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -73,6 +82,7 @@
         }
 
         function loadQuiz() {
+            NUM_QUESTIONS = getNumberOfQuestions();
             shuffleArray(questions);
             const quizQuestions = questions.slice(0, NUM_QUESTIONS);
             let quizHTML = '';
