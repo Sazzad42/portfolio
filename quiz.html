@@ -8,12 +8,42 @@
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
         .question { margin-bottom: 20px; }
         .correct { color: green; }
-        .incorrect { color: red; }
+        .incorrect { color: rgb(255, 0, 0); }
+
+        .quiz{
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: wheat;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            color: white;
+            font-size: larger;
+
+        }
+        .question h3 {
+            margin-bottom: 10px;
+            color: #333;
+
+        }
+        .question p {
+            margin-bottom: 10px;
+            font-size: larger;
+
+        }
+        .answers label {
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <h1>Random Quiz</h1>
-    <form id="quizForm"></form>
+    <div class="quiz">
+        <h1>Random Quiz</h1>
+        <form id="quizForm" class="quiz-form"></form>
+        <div id="results"></div>
+    </div>
     <div id="results"></div>
 
     <script>
